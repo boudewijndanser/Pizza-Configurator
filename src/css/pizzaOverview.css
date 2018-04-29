@@ -1,0 +1,71 @@
+/* src/css/pizzaOverview */
+
+@import url('https://fonts.googleapis.com/css?family=Contrail+One|Lobster');
+/* font-family: 'Lobster', cursive;
+font-family: 'Contrail One', cursive; */
+
+
+.yourPizza {
+    background-color: #1D9A4C;
+    width: 280px;
+    margin: 20;
+    right: 5%;
+    left: 50;
+    top: 90px;
+    bottom: auto;
+    position: fixed;
+    font-family: 'Contrail One', cursive;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:0px;
+    padding-bottom: 20px;
+    
+
+}
+
+  .pizzaBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 35px;
+    /* align-content: center; */
+    align-items: stretch;
+    align-content: center
+  }
+
+
+  .yourPizza h1 {
+    font-size: 24px;
+  }
+
+  .yourPizza h2 {
+    font-size: 21px;
+    color: white;
+    }
+
+  yourPizza h3 {
+    font-size: 18px;
+    color: white;
+    }
+
+  .pizzaBox h4 {
+    font-size: 14px;
+    color: white;
+    width: 65px;
+  }
+
+  .pizzaBox h5 {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    width: 125px;
+  }
+
+   .pizzaBox h6 {
+    font-size: 16px;
+    color: #30B258;
+    text-align: left;
+    width: 80px;
+  }
+
+
+  
