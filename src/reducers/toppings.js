@@ -1,11 +1,11 @@
 
-import { DRONE_DELIVERY } from '../actions/index'
+import { SELECT_TOPPINGS } from '../actions/index'
 
-const initialState = "0"
+const initialState = []
 
 export default function(state = initialState, action = {}) {
   switch(action.type) {
-    case DRONE_DELIVERY :
+    case SELECT_TOPPINGS :
       return action.payload
     default :
       return state

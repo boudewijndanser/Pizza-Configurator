@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/components.css'
+import { bases } from '../externalPizza'
 
 import Radio, { RadioGroup } from 'material-ui-next/Radio';
 import { FormControlLabel } from 'material-ui-next/Form';
@@ -10,7 +11,7 @@ class PizzaBase extends React.Component {
     constructor(props) {
         super(props)
             this.state = {
-            base: "20"
+            base: ''
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -36,18 +37,17 @@ class PizzaBase extends React.Component {
         <h4>{this.props.subTitle}</h4>
         <RadioGroup
             name={this.props.name}
-            // className={classes.group}
             value={this.state.base}
             onChange={this.handleChange} >
 
-            <FormControlLabel value="20cm" control={<Radio />} label="20cm NY style" />
-            <FormControlLabel value="25cm" control={<Radio />} label="25cm NY style" />
-            <FormControlLabel value="30cm" control={<Radio />} label="30cm NY style" />
-            <FormControlLabel value="35cm" control={<Radio />} label="35cm NY style" />
+            <FormControlLabel value={bases[0].id} control={<Radio />} label={bases[0].name +" €"+ bases[0].price} />
+            <FormControlLabel value={bases[1].id} control={<Radio />} label={bases[1].name +" €"+ bases[1].price} />
+            <FormControlLabel value={bases[2].id} control={<Radio />} label={bases[2].name +" €"+ bases[2].price} />
+            <FormControlLabel value={bases[3].id} control={<Radio />} label={bases[3].name +" €"+ bases[3].price} />
             
           </RadioGroup>
       </div>
-    );
+    )
   }
 }
 

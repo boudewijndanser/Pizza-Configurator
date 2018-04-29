@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import Button from 'material-ui-next/Button'
 
 import OverviewTitle from './overviewTitle'
+import OverviewTotal from './overviewTotal'
+
+import { bases, sauces, externalToppings, externalDelivery } from '../externalPizza'
 
 import '../css/pizzaOverview.css'
 
@@ -11,13 +14,17 @@ class PizzaOverview extends PureComponent {
   constructor(props) {
     super(props)
         this.state = {
-        delivery: "Normal",
+        delivery: "1",
+        subTotalPrice: "0",
+        deliveryCost: "0",
+        totalPrice: ""
+
     }
 }
 static propTypes = {
   delivery: PropTypes.string.isRequired
 }
-
+  
   render() {
     return (
       <div className="yourPizza">
@@ -25,19 +32,45 @@ static propTypes = {
      {
        this.props.base &&  <OverviewTitle 
        title={"Base:"}
-       product={this.props.base} 
-       price={"11"}/>
+       product={bases[this.props.base].name} 
+       price={"€"+ bases[this.props.base].price}/>
      }
      {
        this.props.sauce && <OverviewTitle 
        title={"Sauce:"}
-       product={this.props.sauce} 
-       price={"2"}/>
+       product={sauces[this.props.sauce].name}  
+       price={"€"+ sauces[this.props.sauce].price}/>
      }
-
-      <OverviewTitle title={"Delivery:"}
-      product={this.props.delivery} 
-      price={"10%"}/>
+     {
+       this.props.toppings[0] &&  <OverviewTitle 
+       title={"Topping:"}
+       product={externalToppings[0].name}
+       price={"€"+ externalToppings[0].price}/>
+     }
+     {
+       this.props.toppings[1] &&  <OverviewTitle 
+       title={"Topping:"}
+       product={externalToppings[1].name}
+       price={"€"+ externalToppings[1].price}/>
+     }
+     {
+       this.props.toppings[2] &&  <OverviewTitle 
+       title={"Topping:"}
+       product={externalToppings[2].name}
+       price={"€"+ externalToppings[2].price}/>
+     }
+     {
+      this.props.delivery && <OverviewTitle title={"Delivery:"}
+      product={externalDelivery[this.props.delivery].name} 
+      price={"€"+this.state.deliveryCost}/>
+     }
+      {
+        this.props.base && <OverviewTotal
+        title="Total:" 
+        totalPrice={"€"+this.state.totalPrice}/>
+      }
+       <br />
+      <br />
       <br />
       <br />
       {
@@ -58,7 +91,8 @@ function mapStateToProps(state){
   return {
     delivery: state.delivery,
     base: state.base,
-    sauce: state.sauce
+    sauce: state.sauce,
+    toppings: state.toppings
   }
 }
 

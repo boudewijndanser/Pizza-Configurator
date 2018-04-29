@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/components.css'
+import { sauces } from '../externalPizza'
 
 import Radio, { RadioGroup } from 'material-ui-next/Radio';
 import { FormControlLabel } from 'material-ui-next/Form';
@@ -40,10 +41,10 @@ class PizzaSauce extends React.Component {
             value={this.state.base}
             onChange={this.handleChange} >
 
-            <FormControlLabel value="white" control={<Radio />} label="White sauce" />
-            <FormControlLabel value="red" control={<Radio />} label="Red sauce" />
-            <FormControlLabel value="double" control={<Radio />} label="Double red sauce" />
-            <FormControlLabel value="mix" control={<Radio />} label="Mix it up!" />
+            <FormControlLabel value={sauces[0].id} control={<Radio />} label={sauces[0].name +" €"+ sauces[0].price} />
+            <FormControlLabel value={sauces[1].id} control={<Radio />} label={sauces[1].name +" €"+ sauces[1].price} />
+            <FormControlLabel value={sauces[2].id} control={<Radio />} label={sauces[2].name +" €"+ sauces[2].price} />
+            <FormControlLabel value={sauces[3].id} control={<Radio />} label={sauces[3].name +" €"+ sauces[3].price} />
             
           </RadioGroup>
       </div>

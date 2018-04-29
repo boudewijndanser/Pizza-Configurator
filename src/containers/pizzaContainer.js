@@ -18,7 +18,7 @@ class PizzaContainer extends PureComponent {
      this.state = {
         base: '',
         sauce: '',
-        toppings: {},
+        toppings: [],
         droneDelivery: false,
         readyToOrder: false
      }
@@ -31,9 +31,9 @@ class PizzaContainer extends PureComponent {
       [event.currentTarget.name]: event.target.checked
     })
         if (this.state.droneDelivery === true){
-            store.dispatch(droneDelivery("Normal"))
+            store.dispatch(droneDelivery("0"))
             } else {
-                store.dispatch(droneDelivery("Drone"))
+                store.dispatch(droneDelivery("1"))
             }
     
   }  
@@ -48,11 +48,6 @@ class PizzaContainer extends PureComponent {
     this.setState({ sauce: event });
     const chosenSauce = event
     store.dispatch(selectSauce(chosenSauce))
-  }
-  
-  handleTopping = name => event => {
-    this.setState({toppings:{ [name]: event.target.checked }});
-    console.log('-> name: ', name)
   }
 
   render() {
@@ -72,8 +67,7 @@ class PizzaContainer extends PureComponent {
       <PizzaTopping
       name={"topping"}
       title={"Get some vegetables on there"}
-      subTitle={'Make it colorful!'}
-      handleFunction={this.handleTopping} />
+      subTitle={'Make it colorful!'} />
       <DroneDelivery
       name={"droneDelivery"}
       title={'Turbo Drone Delivery'}

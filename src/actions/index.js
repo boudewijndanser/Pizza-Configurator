@@ -1,6 +1,7 @@
 export const DRONE_DELIVERY = 'DRONE_DELIVERY'
 export const SELECT_BASE = 'SELECT_BASE'
 export const SELECT_SAUCE = 'SELECT_SAUCE'
+export const SELECT_TOPPINGS = 'SELECT_TOPPINGS'
 
 
 export const droneDelivery = ( delivery ) => {
@@ -21,5 +22,12 @@ export const droneDelivery = ( delivery ) => {
       return {
         type: SELECT_SAUCE,
         payload: sauce
+      }
+    }
+
+    export const selectToppings = ( toppings ) => {
+      return {
+        type: SELECT_TOPPINGS,
+        payload: toppings
       }
     }
