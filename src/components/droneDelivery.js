@@ -10,7 +10,7 @@ class DroneDelivery extends PureComponent {
     constructor(props) {
         super(props)
             this.state = {
-            droneDelivery: false,
+            droneDelivery: "Normal"
         }
     }
     static propTypes = {

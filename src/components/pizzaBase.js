@@ -23,10 +23,11 @@ class PizzaBase extends React.Component {
       }
       handleChange = event => {
         this.setState({ base: event.target.value });
-        // console.log('event.target.value: ',event.target.value)
-        // console.log(this.state.base)
         this.props.handleFunction(event.target.value)
-      };
+        // Using the function passed through the props broke the radiobox selecting
+        // So I'm calling the props function from here, that worked...
+      }
+
   render() {
 
     return (
@@ -37,8 +38,8 @@ class PizzaBase extends React.Component {
             name={this.props.name}
             // className={classes.group}
             value={this.state.base}
-            onChange={this.handleChange}
-          >
+            onChange={this.handleChange} >
+
             <FormControlLabel value="20cm" control={<Radio />} label="20cm NY style" />
             <FormControlLabel value="25cm" control={<Radio />} label="25cm NY style" />
             <FormControlLabel value="30cm" control={<Radio />} label="30cm NY style" />

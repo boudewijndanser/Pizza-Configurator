@@ -4,6 +4,9 @@
 /* font-family: 'Lobster', cursive;
 font-family: 'Contrail One', cursive; */
 
+body {
+  color: darkgray;
+}
 
 .questionAndOptions {
     margin: 0px;
@@ -14,13 +17,17 @@ font-family: 'Contrail One', cursive; */
   }
   
   .questionAndOptions h1 {
+    font-size: 24px;
+  }
+
+  .questionAndOptions h2 {
     font-size: 21px;
   }
 
 
   .questionAndOptions h3 {
     font-size: 18px;
-    color: grey;
+    color: #1D9A4C;
     }
 
   .questionAndOptions h4 {
@@ -33,6 +40,11 @@ font-family: 'Contrail One', cursive; */
     color: lightgrey;
   }
 
-  questionsAndOptions formControl {
-    margin: theme.spacing.unit * 10
+
+  .vegetable1 {
+    text-align: left;
+  }
+
+  .vegetable2 {
+    text-align: left;
   }
