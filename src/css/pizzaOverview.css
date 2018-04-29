@@ -19,6 +19,7 @@ font-family: 'Contrail One', cursive; */
     padding-right: 20px;
     padding-top:0px;
     padding-bottom: 20px;
+    height: 480px;
     
 
 }
@@ -32,6 +33,10 @@ font-family: 'Contrail One', cursive; */
     align-content: center
   }
 
+  .yourTotal h1 {
+    font-size: 45px;
+    color: white;
+  }
 
   .yourPizza h1 {
     font-size: 24px;

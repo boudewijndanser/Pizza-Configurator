@@ -1,21 +1,22 @@
 export const bases = [
+  { id: "0",
+    name: "20cm NY Style",
+    price: 6.45
+  },
   {
-    id: "0",
+    id: "1",
     name: "25cm NY Style",
     price: 8.99
   },
-  { id: "1",
+  { id: "2",
     name: "30cm NY Style",
     price: 11.49
   },
-  { id: "2",
+  { id: "3",
     name: "35cm NY Style",
     price: 13.49
-  },
-  { id: "3",
-    name: "20cm NY Style",
-    price: 6.45
   }
+  
 ]
 
 export const sauces = [
