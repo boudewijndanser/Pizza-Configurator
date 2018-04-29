@@ -10,7 +10,6 @@ class OverviewTotal extends PureComponent {
   render() {
     return (
         <div className="pizzaBox">
-            <div><h5>{this.props.title}</h5></div>
             <div><CalculatedTotal /></div>
        
     </div>

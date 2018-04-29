@@ -28,15 +28,33 @@ class CalculatedTotal extends PureComponent {
             console.log('toppings.length: ', this.props.toppings.length)
         }
 
-        if(this.props.delivery){
-            this.toppingsPrice = (this.props.toppings.length)*0.5
-            console.log('toppings.length: ', this.props.toppings.length)
+        if(this.props.delivery === "1"){
+            this.deliveryPrice = (this.basePrice+this.saucePrice+this.toppingsPrice)*0.1
+            console.log('this.props.delivery:', this.props.delivery)
+            console.log('deliveryPrice: ', deliveryPrice)
         }
 
 
         return (
           <div className="yourTotal">
-          <h1>{this.basePrice+this.saucePrice+this.toppingsPrice}</h1>
+          {
+              this.props.delivery === "0" && <div><h4>Grand Total:</h4>
+              <h1>€{this.basePrice+this.saucePrice+this.toppingsPrice}</h1></div>
+          }
+          {
+              this.props.delivery === "1" && <div><h4>Sub Total:</h4>
+              <h1>€{this.basePrice+this.saucePrice+this.toppingsPrice}</h1></div>
+          }
+          <div>
+          {
+            this.props.delivery === "1" && <div><p>Turbo Drone</p><p>€{(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1}</p></div>
+            }
+            </div>
+            <div>
+            {
+            this.props.delivery === "1" && <div><p>Grand Total:</p><p>€{(this.basePrice+this.saucePrice+this.toppingsPrice)+(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1}</p></div>
+            }
+            </div>
           </div>
         )
       }

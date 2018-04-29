@@ -68,18 +68,16 @@ static propTypes = {
        product={externalToppings[2].name}
        price={"€"+ externalToppings[2].price}/>
      }
-     {
-      this.props.delivery && <OverviewTitle title={"Delivery:"}
-      product={externalDelivery[this.props.delivery].name} 
-      price={"€"+this.state.deliveryCost}/>
-     }
+     
      <br />
       <br />
       {
-        this.props.base && this.props.sauce && <OverviewTotal
-        title="Total"/>
+        this.props.base && this.props.sauce && <OverviewTotal />
       }
        
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       {
