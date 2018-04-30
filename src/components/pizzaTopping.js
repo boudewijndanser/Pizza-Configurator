@@ -25,7 +25,8 @@ class PizzaTopping extends React.Component {
         disabled4: false,
         disabled5: false,
         disabled6: false,
-        disabled7: false
+        disabled7: false,
+        totalChecks: 0
       }
       console.log(this.state)
       console.log(this.props.toppings)
@@ -43,12 +44,17 @@ class PizzaTopping extends React.Component {
 		const newSelection = checkerBox;
 		let newSelectionArray;
 		if(this.state.toppings.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.toppings.filter(s => s !== newSelection)
+      newSelectionArray = this.state.toppings.filter(s => s !== newSelection)
+      this.state.totalChecks = this.state.totalChecks -1
+      console.log('totalChecks: ', this.state.totalChecks)
 		} else {
-			newSelectionArray = [...this.state.toppings, newSelection];
+      newSelectionArray = [...this.state.toppings, newSelection];
+      this.state.totalChecks = this.state.totalChecks +1
+      console.log('totalChecks: ', this.state.totalChecks)
 		}
     this.setState({ toppings: newSelectionArray }, () => console.log('chosen toppings', this.state.toppings));
     store.dispatch(selectToppings(newSelectionArray))
+    
 	}
   
   render() {
@@ -63,7 +69,7 @@ class PizzaTopping extends React.Component {
             control={
               <Checkbox
                 checked={this.state.pineapple}
-                disabled={this.state.disabled1}
+                disabled={this.state.totalChecks === 3 && true}
                 onChange={_ => this.handleChange('1')}
                 value={externalToppings[0].id}
               />
