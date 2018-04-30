@@ -82,11 +82,11 @@ static propTypes = {
       <br />
       {
         !this.props.base && 
-        <Button disabled size="large" color="secondary" variant="raised">Order!</Button>
+        <Button className="btn"disabled size="large" color="secondary" variant="raised">Order!</Button>
       }
       {
         this.props.base && 
-        <Button size="large" color="secondary" variant="raised">Order!</Button>
+        <Button className="btn"size="large" color="secondary" variant="raised">Order!</Button>
       }
       </div>
     )

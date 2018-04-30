@@ -47,12 +47,12 @@ class CalculatedTotal extends PureComponent {
           }
           <div>
           {
-            this.props.delivery === "1" && <div><p>Turbo Drone</p><p>€{(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1}</p></div>
+            this.props.delivery === "1" && <div><p>Turbo Drone</p><p>€{(Math.round(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1).toFixed(2)}</p></div>
             }
             </div>
             <div>
             {
-            this.props.delivery === "1" && <div><p>Grand Total:</p><p>€{(this.basePrice+this.saucePrice+this.toppingsPrice)+(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1}</p></div>
+            this.props.delivery === "1" && <div><p>Grand Total:</p><p>€{(Math.round(this.basePrice+this.saucePrice+this.toppingsPrice)+(this.basePrice+this.saucePrice+this.toppingsPrice)*0.1).toFixed(2)}</p></div>
             }
             </div>
           </div>
