@@ -5,7 +5,7 @@
 
 The goal of this assignment was to get more familiar with forms, radio buttons, checkboxes and Material UI while using React / Redux. The Redux state contained the state of the pizza. The price was calculated and updated based on the information from the Redux state. All pizza descriptions, prices, etc were loaded from an external file.
 
-## With the endproduct a user could:
+### With the endproduct a user could:
 
 * Choose a pizza base
 * Choose a sauce
