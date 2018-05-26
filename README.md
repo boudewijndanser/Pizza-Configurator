@@ -1,3 +1,4 @@
+![react icon](https://github.com/boudewijndanser/Pizza-Configurator/blob/master/public/dev-icons/react.svg)
 # Pizza Configurator
 > Assignment made for Codaisseur
 
