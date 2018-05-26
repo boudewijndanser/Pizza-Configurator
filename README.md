@@ -3,7 +3,7 @@
 > Assignment made for Codaisseur
 <br />Highest score of the class, 11 out of 12 points
 
-The goal of this assignment was to get more familiar with forms, radio buttons, checkboxes and Material UI while using React / Redux. The Redux state contained the state of the pizza. The price was calculated and updated based on the information from the Redux state. Al pizza desciptions, prices, etc were loaded from an external file.
+The goal of this assignment was to get more familiar with forms, radio buttons, checkboxes and Material UI while using React / Redux.
 
 ## With the endproduct a user could:
 
@@ -12,5 +12,6 @@ The goal of this assignment was to get more familiar with forms, radio buttons, 
 * Pick one or more toppings
 * Choose for Turbo Drone delivery
 
+The Redux state contained the state of the pizza. The price was calculated and updated based on the information from the Redux state. Al pizza desciptions, prices, etc were loaded from an external file.
 
 ###### No pizza's were harmed during the making.
