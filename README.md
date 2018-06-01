@@ -12,6 +12,10 @@ The goal of this assignment was to get more familiar with forms, radio buttons, 
 * Pick one or more toppings
 * Choose for Turbo Drone delivery
 
+### To run this project
 
+* Clone the repo
+* Run `yarn` to download the dependencies
+* Run `yarn start` 
 
 ###### No pizza's were harmed during the making.
