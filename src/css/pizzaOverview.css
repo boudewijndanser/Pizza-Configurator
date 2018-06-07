@@ -1,76 +1,80 @@
-/* src/css/pizzaOverview */
 
-@import url('https://fonts.googleapis.com/css?family=Contrail+One|Lobster');
-/* font-family: 'Lobster', cursive;
-font-family: 'Contrail One', cursive; */
+/* css reset */
 
+body {
+  margin: 0;
+  padding: 0;
+}
+/* General styles: */
 
-.yourPizza {
-    background-color: #1D9A4C;
-    width: 280px;
-    margin: 20;
-    right: 5%;
-    left: 50;
-    top: 90px;
-    bottom: auto;
-    position: fixed;
-    font-family: 'Contrail One', cursive;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top:0px;
-    padding-bottom: 20px;
-    height: 480px;
-    
+.header,
+.options,
+.order,
+footer {
+  padding: 1em 2em;
+  margin: 0;
+}
+
+.pizzaWrapper {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #F2453D;
+  color: white;
+}
+
+.order {
+  background-color: #1D9A4C;
+}
+
+.options {
 
 }
 
-  .pizzaBox {
-    display: flex;
-    flex-wrap: wrap;
-    height: 35px;
-    /* align-content: center; */
-    align-items: stretch;
-    align-content: center
-  }
+.footer {
+  background-color: #F2453D;
+}
 
-  .yourTotal h1 {
-    font-size: 45px;
-    color: white;
-  }
+/* If there is no grid support */
+@supports not (display: grid) {
+	.pizzaWrapper {
+		max-width: 50em;
+		margin: 0 auto;
+	}
+}
 
-  .yourPizza h1 {
-    font-size: 24px;
-  }
+/* Wider screens with grid support */
 
-  .yourPizza h2 {
-    font-size: 21px;
-    color: white;
+@media screen and (min-width: 700px){
+  @supports (display: grid) {
+
+    .pizzaWrapper {
+			display: grid;
+			grid-template-columns: 1fr repeat(12, minmax(auto, 10em)) 1fr;
+			grid-template-rows: 1fr repeat(12, minmax(auto, 10em)) 1fr;
+		}
+
+    .header {
+      grid-column: span 13;
+    }
+    .options {
+      grid-column-start: 2;
+      grid-column-end: 10;
     }
 
-  yourPizza h3 {
-    font-size: 18px;
-    color: white;
+    .order {
+      grid-column: 9/13;
+      grid-row-start: 3;
+      z-index: 5;
     }
 
-  .pizzaBox h4 {
-    font-size: 14px;
-    color: white;
-    width: 65px;
+    .footer {
+      grid-column: span 13;
+      grid-row-start: 13;
+      grid-row-end: 13;
+    }
   }
+}
 
-  .pizzaBox h5 {
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    width: 125px;
-  }
-
-   .pizzaBox h6 {
-    font-size: 16px;
-    color: #30B258;
-    text-align: left;
-    width: 80px;
-  }
-
-
-  
