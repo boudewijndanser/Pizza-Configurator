@@ -5,12 +5,14 @@ import { droneDelivery, selectBase, selectSauce } from '../actions/index'
 import { connect } from 'react-redux'
 import store from '../store'
 
-
 import PizzaOverview from '../components/pizzaOverview'
 import PizzaBase from '../components/pizzaBase'
 import PizzaSauce from '../components/pizzaSauce'
 import PizzaTopping from '../components/pizzaTopping'
 import DroneDelivery from '../components/droneDelivery'
+
+import '../css/pizzaOverview.css'
+import '../css/typography.css'
 
 class PizzaContainer extends PureComponent {
  constructor(props) {
@@ -52,28 +54,31 @@ class PizzaContainer extends PureComponent {
 
   render() {
     return (
-        <div>
-      <PizzaOverview />
-      <PizzaBase 
-      name={"base"}
-      title={"Start by choosing a base for your pizza"}
-      subTitle={'Pick a size'}
-      handleFunction={this.handleBase} />
-      <PizzaSauce 
-      name={"sauce"}
-      title={"Select a sauce of your liking"}
-      subTitle={'Red is the new black!'}
-      handleFunction={this.handleSauce} />
-      <PizzaTopping
-      name={"topping"}
-      title={"Get some vegetables on there"}
-      subTitle={'Make it colorful!'} />
-      <DroneDelivery
-      name={"droneDelivery"}
-      title={'Turbo Drone Delivery'}
-      subTitle={'Are you getting hangry?'}
-      label={"Send help soon..."}
-      handleFunction={this.handleDelivery} /> 
+      <div className="pizzaWrapper">
+        <div className="header"><h1>Pizza Configurator</h1></div>
+        <main className="options"><PizzaBase 
+          name={"base"}
+          title={"Start by choosing a base for your pizza"}
+          subTitle={'Pick a size'}
+          handleFunction={this.handleBase} />
+        <PizzaSauce 
+          name={"sauce"}
+          title={"Select a sauce of your liking"}
+          subTitle={'Red is the new black!'}
+          handleFunction={this.handleSauce} />
+        <PizzaTopping
+          name={"topping"}
+          title={"Get some vegetables on there"}
+          subTitle={'Make it colorful!'} />
+        <DroneDelivery
+          name={"droneDelivery"}
+          title={'Turbo Drone Delivery'}
+          subTitle={'Are you getting hangry?'}
+          label={"Send help soon..."}
+          handleFunction={this.handleDelivery} />
+        </main>
+        <aside className="order"><PizzaOverview /></aside>
+        <footer className="footer"><p>Pizza & code by: <a href="https://github.com/boudewijndanser">Boudewijn Danser</a></p></footer>
       </div>
     )
   }
